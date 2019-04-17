@@ -24,9 +24,11 @@ if(is_dir($to) || $_FILES["file"]["error"] > 0 && $_FILES["file"]["error"] != 5)
         unlink($to);
     } else {
         $dir = dirname($to);
+
         if(!file_exists($dir)){
             mkdirs($dir);
         }
     }
+
     echo move_uploaded_file($_FILES["fileContent"]["tmp_name"], $to) ? 0 : 1;
 }
