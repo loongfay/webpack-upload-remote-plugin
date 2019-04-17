@@ -23,9 +23,6 @@
     "server"
   ],
   "license": "ISC",
-  "peerDependencies": {
-    "webpack": "^4.0.0"
-  },
   "dependencies": {
     "chalk": "^2.4.2",
     "console-progress-bar": "^1.0.3",
