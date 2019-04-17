@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/izhaolongfei/maxfe/tree/master/webpack-upload-remote-plugin"
+    "url": "https://github.com/izhaolongfei/webpack-upload-remote-plugin"
   },
   "keywords": [
     "webpack",
