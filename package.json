@@ -22,15 +22,12 @@
     "http",
     "server"
   ],
-  "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
     "console-progress-bar": "^1.0.3",
-    "copy-webpack-plugin": "^5.0.2",
     "fs": "0.0.1-security",
-    "ora": "^3.4.0",
     "path": "^0.12.7",
-    "request": "^2.88.0",
-    "rimraf": "^2.6.3"
-  }
+    "request": "^2.88.0"
+  },
+  "license": "ISC"
 }

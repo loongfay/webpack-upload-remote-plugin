@@ -102,7 +102,7 @@ class UploadRemotePlugin {
             url: this.receiver,
             formData
         }, (error, response) => {
-            if (!error && response.statusCode == 200) {
+            if (!error && response.statusCode === 200) {
                 this.uploadedNum++;
 
                 this.consoleProgressBar.addValue(1);
