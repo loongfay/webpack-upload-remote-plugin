@@ -33,7 +33,7 @@ class UploadRemotePlugin {
     }
 
     apply(compiler) {
-        compiler.hooks.done.tap('UploadToRemotePlugin', stats => {
+        compiler.plugin('done', stats => {
             this.startTime = Date.now();
 
             const {
