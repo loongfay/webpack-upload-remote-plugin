@@ -7,7 +7,8 @@
     "node": ">= 6.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,18 +23,6 @@
     "http",
     "server"
   ],
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "6.9.0"
-          }
-        }
-      ]
-    ]
-  },
   "license": "ISC",
   "peerDependencies": {
     "webpack": "^4.0.0"

@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
-class UploadToRemotePlugin {
+class UploadRemotePlugin {
     constructor(options) {
         const {
             context = '',
@@ -138,4 +138,4 @@ class UploadToRemotePlugin {
     }
 }
 
-export default UploadToRemotePlugin;
+module.exports = UploadRemotePlugin;
