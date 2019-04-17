@@ -1,0 +1,23 @@
+{
+  "name": "webpack-upload-remote-plugin",
+  "version": "1.0.2",
+  "description": "webpack-upload-remote-plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izhaolongfei/maxfe/tree/master/webpack-upload-remote-plugin"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "remote",
+    "upload",
+    "http",
+    "server"
+  ],
+  "author": "zhaolongfei@gmail.com",
+  "license": "ISC"
+}
