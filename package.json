@@ -3,6 +3,9 @@
   "version": "1.0.5",
   "description": "webpack-upload-remote-plugin",
   "main": "index.js",
+  "engines": {
+    "node": ">= 6.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +13,7 @@
     "type": "git",
     "url": "https://github.com/izhaolongfei/webpack-upload-remote-plugin"
   },
+  "author": "zhaolongfei@gmail.com",
   "keywords": [
     "webpack",
     "plugin",
@@ -18,8 +22,22 @@
     "http",
     "server"
   ],
-  "author": "zhaolongfei@gmail.com",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "6.9.0"
+          }
+        }
+      ]
+    ]
+  },
   "license": "ISC",
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
   "dependencies": {
     "chalk": "^2.4.2",
     "console-progress-bar": "^1.0.3",

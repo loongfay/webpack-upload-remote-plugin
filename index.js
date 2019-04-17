@@ -138,4 +138,4 @@ class UploadToRemotePlugin {
     }
 }
 
-module.exports = UploadToRemotePlugin;
+export default UploadToRemotePlugin;
