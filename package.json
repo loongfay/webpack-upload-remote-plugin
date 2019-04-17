@@ -1,6 +1,6 @@
 {
   "name": "webpack-upload-remote-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "webpack-upload-remote-plugin",
   "main": "index.js",
   "scripts": {
