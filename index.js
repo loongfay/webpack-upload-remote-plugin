@@ -127,6 +127,8 @@ class UploadRemotePlugin {
                     this.consoleProgressBar.addValue(1);
 
                     console.log(chalk.red.bold(`\n[UploadToRemotePlugin] upload failed: ${pathFrom} >> ${pathTo}; Post Error: ${error}`));
+
+                    !this.parellel && next && next();
                 }
             }
 
