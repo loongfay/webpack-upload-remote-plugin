@@ -119,7 +119,6 @@ class UploadRemotePlugin {
             } else {
                 this.fails[pathFrom] = (this.fails[pathFrom] || 0) + 1;
 
-
                 if (this.fails[pathFrom] <= this.retry) {
                     // 重试
                     console.log(chalk.yellow.bold(`\n[UploadToRemotePlugin] upload retry No.${this.fails[pathFrom]}: ${pathFrom} >> ${pathTo}`));
