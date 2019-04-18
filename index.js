@@ -1,6 +1,6 @@
 /**
- * @file UploadToRemotePlugin
- * @author zhaolongfei@gmail.com
+ * @file UploadRemotePlugin
+ * @author izhaolongfei@gmail.com
  */
 
 const ConsoleProgressBar = require('console-progress-bar');
@@ -29,6 +29,7 @@ class UploadRemotePlugin {
         this.files = [];
         this.retry = 10;
         this.fails = {};
+        this.totalNum = 0;
         this.uploadedNum = 0;
     }
 
@@ -57,6 +58,8 @@ class UploadRemotePlugin {
                     }
                 }
             }
+
+            this.totalNum = this.files.length;
 
             this.consoleProgressBar = new ConsoleProgressBar({
                 maxValue: this.files.length
@@ -116,12 +119,13 @@ class UploadRemotePlugin {
             } else {
                 this.fails[pathFrom] = (this.fails[pathFrom] || 0) + 1;
 
-                // 重试
-                this.upload(file, next);
 
-                console.log(chalk.yellow.bold(`\n[UploadToRemotePlugin] upload retry No.${this.fails[pathFrom]}: ${pathFrom} >> ${pathTo}`));
+                if (this.fails[pathFrom] <= this.retry) {
+                    // 重试
+                    console.log(chalk.yellow.bold(`\n[UploadToRemotePlugin] upload retry No.${this.fails[pathFrom]}: ${pathFrom} >> ${pathTo}`));
 
-                if (this.fails[pathFrom] > this.retry) {
+                    this.upload(file, next);
+                } else {
                     this.uploadedNum++;
 
                     this.consoleProgressBar.addValue(1);
@@ -132,7 +136,7 @@ class UploadRemotePlugin {
                 }
             }
 
-            if (this.uploadedNum === this.files.length) {
+            if (this.uploadedNum === this.totalNum) {
                 const cost = ((Date.now() - this.startTime) / 1000).toFixed(3);
                 console.log(chalk.cyan.bold(`\n[UploadToRemotePlugin] upload done...Cost:${cost}s`));
             }
