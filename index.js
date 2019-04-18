@@ -20,12 +20,12 @@ class UploadRemotePlugin {
             context = '',
             receiver,
             rules,
-            parellel = true
+            parallel = true
         } = options;
         this.context = context;
         this.receiver = receiver;
         this.rules = rules;
-        this.parellel = parellel;
+        this.parallel = parallel;
         this.files = [];
         this.retry = 10;
         this.fails = {};
@@ -65,7 +65,7 @@ class UploadRemotePlugin {
                 maxValue: this.files.length
             });
 
-            this.parellel ? this.uploadFiles() : this.uploadFileOneByOne();
+            this.parallel ? this.uploadFiles() : this.uploadFileOneByOne();
         });
     }
 
@@ -132,7 +132,7 @@ class UploadRemotePlugin {
 
                     console.log(chalk.red.bold(`\n[UploadToRemotePlugin] upload failed: ${pathFrom} >> ${pathTo}; Post Error: ${error}`));
 
-                    !this.parellel && next && next();
+                    !this.parallel && next && next();
                 }
             }
 
